@@ -60,3 +60,14 @@
 **Result:** PASS
 
 **Bug/Issue:** None
+
+## Test Observation
+
+**Observation:** The product page does not provide an option to increase the quantity of the same product before adding it to the cart. After one unit is added, the **Add to cart** button changes to **Remove**.
+
+**Expected:** If multiple quantities of the same product are supported, the user should have an option to increase the quantity.
+
+**Actual:** Only one unit can be added from the product page at a time.
+
+**Classification:** Observation — not confirmed as a defect because no requirement was established stating that multiple quantities of the same product must be supported.
+
