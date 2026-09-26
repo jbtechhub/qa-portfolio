@@ -61,3 +61,36 @@ The API accepted the request and created the product even though the selling pri
 **Result:** FAIL
 
 **Related Bug:** BUG-001
+
+### TC-003: Reject Product When Product Name Already Exists
+
+**Objective:** Verify that the Product Creation API does not allow duplicate product names.
+
+**Precondition:** User is authenticated and the Product Creation API is accessible. An existing product named **Shampoo 15ml** is already in the system.
+
+**Test Data:**
+
+* Product Name: Shampoo 15ml
+* Buy Price: ₱8
+* Sell Price: ₱10
+* Stock: 5
+
+**Steps:**
+
+1. Send a POST request to `/products`.
+2. Enter an existing product name: `Shampoo 15ml`.
+3. Enter ₱8 as the buy price.
+4. Enter ₱10 as the sell price.
+5. Enter 5 as the stock.
+6. Submit the request.
+
+**Expected Result:** The API should reject the request because the product name already exists. No duplicate product should be created.
+
+**Actual Result:** During initial testing, the API accepted the request and created a duplicate product with the same name.
+
+**Result:** PASS
+
+**Retest Result:** PASS — After the backend duplicate-name validation fix, the API rejected the request with HTTP 400 and returned `"Product already exists"`.
+
+**Related Bug:** BUG-002
+
