@@ -93,35 +93,3 @@ The API accepted the request and created the product even though the selling pri
 **Retest Result:** PASS — After the backend duplicate-name validation fix, the API rejected the request with HTTP 400 and returned `"Product already exists"`.
 
 **Related Bug:** BUG-002
-
-### TC-004: Create Valid Product After Backend Validation Fixes
-
-**Objective:** Verify that valid product creation still works after the backend validation fixes.
-
-**Precondition:** User is authenticated and the Product Creation API is accessible.
-
-**Test Data:**
-
-* Product Name: QA Post Fix Valid Product
-* Buy Price: ₱10
-* Sell Price: ₱15
-* Stock: 5
-
-**Steps:**
-
-1. Send a POST request to `/products`.
-2. Enter a valid product name.
-3. Enter ₱10 as the buy price.
-4. Enter ₱15 as the sell price.
-5. Enter 5 as the stock.
-6. Submit the request.
-
-**Expected Result:** The API should successfully create the product with the provided values and assign a system-generated barcode.
-
-**Actual Result:** The product was created successfully with the correct buy price, sell price, stock, and system-generated barcode.
-
-**Result:** PASS
-
-**Test Type:** Regression Testing
-
-
